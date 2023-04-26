@@ -1,0 +1,112 @@
+
+{% extends 'base.html'%}
+
+{% block content%}
+
+
+<div  class="container d-flex justify-content-center">
+<div class="col-lg-12">
+	<div class="heading-text heading-section text-center heading-text heading">
+    <h2>Employee Registration Form</h2>
+
+    </div>
+
+  <form action="/regform1/" method="post" enctype="multipart/form-data">{% csrf_token %}
+     
+    
+    
+    <div class="form-row pt-3">
+      <div class="form-group col-md-6">
+        <label for="name">Name <span style="color: red;">*</span></label>
+        <input type="text" name="name" class="form-control" id="name" required="TRUE">
+      </div>
+      <div class="form-group col-md-6">
+      <label for="email">Email <span style="color: red;">*</span></label>{{error}}
+        <input type="Email" name="email" class="form-control" id="email" required="">
+      </div>
+    
+    <div class="form-group col-md-6">
+      <br>
+      <label for="phone">Phone Number <span style="color: red;">*</span></label>
+      <input type="tel" name="phone" class="form-control" id="phone" onkeypress="return onlyNumberKey(event)" required="">
+    </div>
+    <div class="form-group col-md-6">
+      <br>
+      <label for="qualification">Highest Qualification <span style="color: red;">*</span></label>
+      <input type="text" name="qualification" class="form-control" id="qualification" required="">
+    </div>
+    <div class="form-group col-md-6">
+      <br>
+      <label for="experience">Experience <span style="color: red;">*</span></label>
+      <input type="text" name="experience" class="form-control" id="experience" required="">
+    </div>
+    <div class="form-group col-md-6">
+      <br>
+      <label for="linkedin">LinkedIn Profile </label>
+      <input type="text" name="linkedin" class="form-control" id="linkedin">
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <br>
+        <label for="Category">Job Category <span style="color: red;">*</span></label>
+        <div class="container">
+
+    <!-- <h2>Fill / Equal Widths</h2> -->
+    <!-- <p>Use .flex-fill on flex items to force them into equal widths:</p> -->
+    <div class="row m-1 pt-2">
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio1" value="Programming" required="">
+    <label class="form-check-label" for="inlineRadio1">Programming</label></div>
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio2" value="Designing" required="">
+    <label class="form-check-label" for="inlineRadio2">Designing</label></div>
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio3" value="Marketing &amp; Sales" required="">
+    <label class="form-check-label" for="inlineRadio3">Marketing &amp; Sales</label></div>
+      <div class="col-md-3"> <input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio5" value="Content Writing" required="">
+    <label class="form-check-label" for="inlineRadio5">Content Writing</label></div>
+    </div>
+    <div class="row m-1">
+      <div class="col-md-3"> <input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio6" value="Business Development" required="">
+    <label class="form-check-label" for="inlineRadio6">Business Development</label></div>
+      <div class="col-md-3"> <input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio7" value="Human Resource" required="">
+    <label class="form-check-label" for="inlineRadio7">Human Resource</label></div>
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio8" value="Administration" required="">
+    <label class="form-check-label" for="inlineRadio8">Administration</label></div>
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio9" value="Project Management" required="">
+    <label class="form-check-label" for="inlineRadio9">Project Management</label></div>
+    </div>
+    <div class="row m-1">
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio10" value="Finance" required="">
+    <label class="form-check-label" for="inlineRadio10">Finance</label></div>
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio11" value="Customer Relations" required="">
+    <label class="form-check-label" for="inlineRadio11">Customer Relations</label></div>
+      <div class="col-md-3"><input class="form-check-input" type="radio" name="jobcategory" id="inlineRadio12" value="Others" required="">
+    <label class="form-check-label" for="inlineRadio12">Others</label></div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+    
+  <!-- <br> -->
+  <p class="m-1" style="font-size: 13px;">Select the job category you are looking for.</p>
+      </div>
+  </div>
+    <!-- <div class="form-row pt-3"> -->
+      <!-- <div class="form-group col-md-6"> -->
+        <!-- <br> -->  
+        <!-- <label for="Resume">Upload Your Resume <span style="color: red;">*</span></label>
+        <input type="file" class="form-control" name="resume" id="Resume" accept=".pdf,.docx,.doc" required="">
+        <p style="font-size: 13px;">Maximum Uploadable size is 5 MB. Only PDF &amp; Doc file types are supported.</p>
+      </div> -->
+    
+    <!-- </div> -->
+  <br>
+    <button type="submit" class="btn btn-primary">Submit</button>{{success}}
+    <p>*Note: A candidate can attend maximum of 3 allocated Interviews so we humbly request the candidates to carry 3 copies of your resumes and 3 passport size photos</p>
+
+  </div>
+  </div>
+</form>
+
+
+{% endblock %}
+    
